@@ -40,16 +40,13 @@ void solve(char *str)
     int i = 1;
     while (i < 10)
     {
-        char ch = '0' + i;
         int res = i * num;
-
-        if (i != 1)
-            write(1, "\n", 1);
-        write(1, &ch, 1);
+        print_nbr(i);
         write(1, " x ", 3);
         print_nbr(num);
         write(1, " = ", 3);
         print_nbr(res);
+        write(1, "\n", 1);
         i++;
     }
 }
@@ -58,6 +55,7 @@ int main(int ac, char **av)
 {
     if (ac == 2)
         solve(av[1]);
-    write(1, "\n", 1);
+    else
+        write(1, "\n", 1);
 }
 
