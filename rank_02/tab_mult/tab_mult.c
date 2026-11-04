@@ -25,12 +25,9 @@ int ft_atoi(char *str)
 
 void print_nbr(int num)
 {
-    if (num <= 0)
-        return;
-    char ch;
-    int last_digit = num % 10;
-    print_nbr(num / 10);
-    ch = '0' + last_digit;
+    if (num > 9)
+        print_nbr(num / 10);
+    char ch = '0' + (num % 10);
     write(1, &ch, 1);
 }
 
@@ -50,18 +47,9 @@ void solve(char *str)
             write(1, "\n", 1);
         write(1, &ch, 1);
         write(1, " x ", 3);
-        if (num)
-        {
-            print_nbr(num);
-            write(1, " = ", 3);
-            print_nbr(res);
-        }
-        else
-        {
-            write(1, "0", 1);
-            write(1, " = ", 3);
-            write(1, "0", 1);
-        }
+        print_nbr(num);
+        write(1, " = ", 3);
+        print_nbr(res);
         i++;
     }
 }
