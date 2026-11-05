@@ -8,6 +8,7 @@ int ft_strlen(char *str)
 
 char    *ft_strrev(char *str)
 {
+    if (!str) return 0; //NULL here is where it crashed
     int l = 0, r = ft_strlen(str) -1;
     char tmp;
 
